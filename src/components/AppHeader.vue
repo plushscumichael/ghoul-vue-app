@@ -35,6 +35,10 @@
                     <v-icon left v-html="item.icon"></v-icon>
                     {{item.title}}
                 </v-btn>
+                <v-btn flat @click.prevent="signout" v-if='isUserAuthenticated'>
+                    <v-icon left>exit_to_app</v-icon>
+                    Quit
+                </v-btn>
             </v-toolbar-items>
         </v-toolbar>
     </div>
@@ -63,11 +67,6 @@
                         icon: 'account_circle',
                         title: 'My Profile',
                         route: '/profile',
-                    },
-                    {
-                        icon: 'exit_to_app',
-                        title: 'Quit',
-                        route: '/logout',
                     }
                 ] : 
                 [
@@ -87,6 +86,14 @@
                         route: '/signup',
                     }
                 ]
+            }
+        },
+        methods: {
+            signout(){
+                this.$confirm('Do you really want to exit?').then(res => {
+                    if (res)
+                        this.$store.dispatch('SIGNOUT')
+                })
             }
         }
     }
