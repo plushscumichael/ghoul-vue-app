@@ -46,19 +46,18 @@
                 return {
                     drawer: false
                 }
-            },
+        },
         computed:{
+            isUserAuthenticated(){
+                return this.$store.getters.isUserAuthenticated
+            },
             menuItems(){
-                return[
+                return this.isUserAuthenticated
+                    ? [
                     {
                         icon: 'visibility',
                         title: 'Read',
                         route: '/books',
-                    },
-                    {
-                        icon: 'extension',
-                        title: 'Learn',
-                        route: '/words',
                     },
                     {
                         icon: 'account_circle',
@@ -69,6 +68,13 @@
                         icon: 'exit_to_app',
                         title: 'Quit',
                         route: '/logout',
+                    }
+                ] : 
+                [
+                    {
+                        icon: 'visibility',
+                        title: 'Read',
+                        route: '/books',
                     },
                     {
                         icon: 'input',
