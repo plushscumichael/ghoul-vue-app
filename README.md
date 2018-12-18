@@ -1,26 +1,16 @@
-# braingym
-
+# ghoul Vue App
 ## Project setup
 ```
+ For run this (one)masterpiece
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
 
-### Compiles and minifies for production
-```
+
+This for me, not for you
+...
+or you can steal it, come on =)
+
 npm run build
-```
 
-### Run your tests
-```
 npm run test
-```
-
-### Lints and fixes files
-```
 npm run lint
-```
