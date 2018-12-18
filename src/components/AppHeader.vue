@@ -22,7 +22,7 @@
                 class="hidden-md-and-up"></v-toolbar-side-icon
             >  
             <router-link to='/' tag='span' style='cursor:pointer'>
-                <v-toolbar-title v-text="'braingym'"></v-toolbar-title>
+                <v-toolbar-title v-text="'ghoul Vue App'"></v-toolbar-title>
              </router-link>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
