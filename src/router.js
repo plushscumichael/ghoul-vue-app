@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Books from './views/Books.vue'
+import Book from './views/booksContent/Book.vue'
 import Words from './views/Words.vue'
 import Signin from './views/Signin.vue'
 import Signup from './views/Signup.vue'
@@ -21,6 +22,12 @@ export default new Router({
       path: '/books',
       name: 'books',
       component: Books
+    },
+    {
+      path: '/book/:bookId',
+      name: 'book',
+      props: true,
+      component: Book
     },
     {
       path: '/words',

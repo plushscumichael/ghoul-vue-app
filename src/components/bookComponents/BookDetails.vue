@@ -1,31 +1,31 @@
 <template>
-     <v-card color='info' class='white--text'>
+    <v-card color='info' class='white--text'>
         <v-container fluid>
             <v-layout row class ='hidden-sm-and-down'>
                 <v-flex xs4 md3>
-                    <v-card-media v-bind:src="bookListItem.imageSrc" height='100%'/>
+                    <v-card-media v-bind:src="bookDetails.imageSrc" height='100%'/>
                 </v-flex>
                 <v-flex xs8 md9>
                     <v-layout column justify-space-between fill-height>
                         <v-card-title>
                             <div>
-                                <div class='headline'>{{bookListItem.title}}</div>
-                                <div>{{bookListItem.description}}</div>
+                                <div class='headline'>{{bookDetails.title}}</div>
+                                <div>{{bookDetails.description}}</div>
                                 <v-divider class='white'/>
                             </div>
                         </v-card-title>
                         <v-card-title>
                             <v-flex column>
-                                <div>Уровень: {{getBookLevel(bookListItem.level)}}</div>
-                                <div>{{bookListItem.parts.length}} части</div>
+                                <div>Уровень: {{getBookLevel(bookDetails.level)}}</div>
+                                <div>{{bookDetails.parts.length}} части</div>
                             </v-flex>
                         </v-card-title>
                         <v-card-title>
-                            <v-rating v-model='bookListItem.rating' color='yellow' readonly dense half-increments/>
+                            <v-rating v-model='bookDetails.rating' color='yellow' readonly dense half-increments/>
                         </v-card-title>
                         <v-card-actions>
                             <v-spacer/>
-                            <v-btn class='primary' :to="{name:'book', params:{bookId:bookListItem.id}}" flat>Open the Ga...Book</v-btn>
+                            <v-btn class='primary' flat>Lock-n-Load</v-btn>
                         </v-card-actions>
                     </v-layout>
                 </v-flex>
@@ -34,32 +34,32 @@
             <div class ='hidden-md-and-up'>
                 <v-layout row >
                     <v-flex xs4 md3>
-                        <v-card-media v-bind:src="bookListItem.imageSrc" height='100%'/>
+                        <v-card-media v-bind:src="bookDetails.imageSrc" height='100%'/>
                     </v-flex>
                     <v-flex xs8 md9>
                         <v-card-title>
                             <div>
-                                <h4 class='headline'>{{bookListItem.title}}</h4>
+                                <h4 class='headline'>{{bookDetails.title}}</h4>
                                         </div>
                         </v-card-title>
                     </v-flex>
                 </v-layout>
                 <v-layout row>
                     <v-flex xs12>
-                        <div>{{bookListItem.description}}</div>
+                        <div>{{bookDetails.description}}</div>
                     </v-flex>
                 </v-layout>
                 <v-layout row>
                     <v-flex xs12>
-                        <div>Уровень: {{getBookLevel(bookListItem.level)}}, {{bookListItem.parts.length}} части</div>
+                        <div>Уровень: {{getBookLevel(bookDetails.level)}}, {{bookDetails.parts.length}} части</div>
                     </v-flex>
                 </v-layout>
                 <v-layout row>
                     <v-flex xs12>
                         <v-card-actions>
-                            <v-rating v-model='bookListItem.rating' color='yellow' readonly dense half-increments/>
+                            <v-rating v-model='bookDetails.rating' color='yellow' readonly dense half-increments/>
                             <v-spacer/>
-                            <v-btn class='primary' :to="{name:'book', params:{bookId:bookListItem.id}}" flat>Open the Ga...Book</v-btn>
+                            <v-btn class='primary' flat>Lock-n-Load</v-btn>
                          </v-card-actions>
                     </v-flex>
                 </v-layout>
@@ -72,12 +72,12 @@
     import * as bookHelper from '../../helpers/book.js'
     export default {
         props:{
-            'bookListItem':{
-                type: Object, 
+            "bookDetails":{
+                type: Object,
                 required: true
             }
         },
-        methods:{
+         methods:{
             getBookLevel: bookHelper.getBookLevel
         }
     }
