@@ -5,7 +5,7 @@
                 <book-details :bookDetails ='bookGrabber'/>
             </v-flex>
             <v-flex v-for='bookPartListItem in bookGrabber.parts' :key='bookPartListItem.id' xs12 md10 offset-sm1>
-                <book-part-list-item :bookPartListItem='bookPartListItem' :bookPartListItemId='bookPartListItem.bookId'/>
+                <book-part-list-item :bookPartListItem='bookPartListItem' :mainBookId='bookId'/>
             </v-flex>
         </v-layout>
     </v-container>

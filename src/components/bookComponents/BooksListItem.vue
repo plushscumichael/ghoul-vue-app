@@ -3,7 +3,7 @@
         <v-container fluid>
             <v-layout row class ='hidden-sm-and-down'>
                 <v-flex xs4 md3>
-                    <v-card-media v-bind:src="bookListItem.imageSrc" height='100%'/>
+                    <v-img v-bind:src="bookListItem.imageSrc" height='100%'/>
                 </v-flex>
                 <v-flex xs8 md9>
                     <v-layout column justify-space-between fill-height>
@@ -34,7 +34,7 @@
             <div class ='hidden-md-and-up'>
                 <v-layout row >
                     <v-flex xs4 md3>
-                        <v-card-media v-bind:src="bookListItem.imageSrc" height='100%'/>
+                        <v-img v-bind:src="bookListItem.imageSrc" height='100%'/>
                     </v-flex>
                     <v-flex xs8 md9>
                         <v-card-title>

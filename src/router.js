@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Books from './views/Books.vue'
 import Book from './views/booksContent/Book.vue'
+import BookPart from './views/booksContent/BookPart.vue'
 import Words from './views/Words.vue'
 import Signin from './views/Signin.vue'
 import Signup from './views/Signup.vue'
@@ -28,6 +29,12 @@ export default new Router({
       name: 'book',
       props: true,
       component: Book
+    },
+    {
+      path: '/book/:bookId/part/:partId',
+      name: 'bookPart',
+      props: true,
+      component: BookPart
     },
     {
       path: '/words',

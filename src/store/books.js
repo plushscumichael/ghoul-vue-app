@@ -58,15 +58,39 @@ export default {
             level: ['L1', 'L8'],
             rating: 4
         }
+      ],
+      bookParts:[
+        {
+          bookId: 'bookId1',
+          bookPartId: 'book1PartId1',
+          bookTitle: 'Ghoul Book',
+          partTitle: 'Attack'
+        },
+        {
+          bookId: 'bookId2',
+          bookPartId: 'book2PartId1',
+          bookTitle: 'Crypt Fiend Book',
+          partTitle: 'Attack'
+        },
+        {
+          bookId: 'bookId3',
+          bookPartId: 'book3PartId1',
+          bookTitle: 'Gargoyle Book',
+          partTitle: 'Attack'
+        }
       ]
     },
     mutations: {
       SET_BOOKS(state, payload){
         state.books = payload
+      },
+      SET_BOOKPARTS(state, payload){
+        state.bookParts = payload
       }
     },
     getters: {
       getBooks: (state) => state.books,
+      getParts: (state) => state.bookParts
     }
     
   }
