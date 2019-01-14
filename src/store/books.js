@@ -64,20 +64,129 @@ export default {
           bookId: 'bookId1',
           bookPartId: 'book1PartId1',
           bookTitle: 'Ghoul Book',
-          partTitle: 'Attack'
+          partTitle: 'Attack',
+          youtube_id: 'CyZ52RXj1B0',
+          content:[
+            {
+              sentences:[
+                {
+                  origText:'Attack Type',
+                  transText:'Normal'
+                },
+                {
+                  origText: 'Weapon Type',
+                  transText:'Normal'
+                }
+              ],
+            }
+          ]
         },
         {
           bookId: 'bookId2',
           bookPartId: 'book2PartId1',
           bookTitle: 'Crypt Fiend Book',
-          partTitle: 'Attack'
+          partTitle: 'Attack',
+          youtube_id: 'JbWzs5DjcDY',
+          content:[
+            {
+              sentences:[
+                {
+                  origText:'Attack Type',
+                  transText:'Pierce'
+                },
+                {
+                  origText: 'Weapon Type',
+                  transText:'Missile'
+                }
+              ],
+            }
+          ]
         },
         {
           bookId: 'bookId3',
           bookPartId: 'book3PartId1',
           bookTitle: 'Gargoyle Book',
-          partTitle: 'Attack'
-        }
+          partTitle: 'Attack',
+          youtube_id: 'yX55QhcjtHU',
+          content:[
+            {
+              sentences:[
+                {
+                  origText:'Attack Type',
+                  transText:'Pierce/Normal'
+                },
+                {
+                  origText: 'Weapon Type',
+                  transText:'Missile/Normal'
+                }
+              ],
+            }
+          ]
+        },
+        {
+          bookId: 'bookId1',
+          bookPartId: 'book1PartId2',
+          bookTitle: 'Ghoul Book',
+          partTitle: 'Defense',
+          youtube_id: 'CyZ52RXj1B0',
+          content:[
+            {
+              sentences:[
+                {
+                  origText:'Armor Type',
+                  transText:'Heavy'
+                },
+                {
+                  origText: 'Armor',
+                  transText:'0'
+                }
+              ],
+            }
+          ]
+        },
+        {
+          bookId: 'bookId2',
+          bookPartId: 'book2PartId2',
+          bookTitle: 'Crypt Fiend Book',
+          partTitle: 'Defense',
+          youtube_id: 'JbWzs5DjcDY',
+          content:[
+            {
+              sentences:[
+                {
+                  origText:'Armor Type',
+                  transText:'Medium'
+                },
+                {
+                  origText: 'Armor',
+                  transText:'0'
+                }
+              ],
+            }
+          ]
+        },
+        {
+          bookId: 'bookId3',
+          bookPartId: 'book3PartId2',
+          bookTitle: 'Gargoyle Book',
+          partTitle: 'Defense',
+          youtube_id: 'yX55QhcjtHU',
+          content:[
+            {
+              sentences:[
+                {
+                  origText:'Armor Type',
+                  transText:'Unarmored'
+                },
+                {
+                  origText: 'Armor',
+                  transText:'3'
+                }
+              ],
+            }
+          ]
+        },
+        
       ]
     },
     mutations: {
