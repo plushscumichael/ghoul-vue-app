@@ -12,6 +12,7 @@
 </template>
 
 <script>
+    import Vue from 'vue'
     import BookPartContent from '../../components/bookComponents/BookPartContent.vue'
     import BookPartWords from '../../components/bookComponents/BookPartWords.vue'
     export default {
@@ -25,11 +26,25 @@
                 required: true
             }
         },
-        computed:{
-            bookPartGrabber(){
-                let val = this.$store.getters.getParts.find(b => b.bookId == this.bookId && b.bookPartId == this.partId)
-                return val
+        data(){
+            return {
+                bookPartGrabber: null
             }
+        },
+        computed:{
+           /* bookPartGrabber(){ let val = this.$store.getters.getParts.find(b => b.bookId == this.bookId && b.bookPartId == this.partId) return val } */
+        },
+        created(){
+            Vue.$db.collection('bookParts')
+                .where('bookId', '==', this.bookId)
+                .where('bookPartId', '==', this.partId)
+                .get()
+                .then(querySnapshot => {
+                    querySnapshot.forEach(s => {
+                        this.bookPartGrabber = s.data()
+                    })
+                })
+                /* .catch(error => console.log(error)) */
         },
         components:{
             BookPartContent, BookPartWords

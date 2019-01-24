@@ -58,7 +58,7 @@
                     <v-flex xs12>
                         <v-card-actions>
                             <v-rating v-model='bookListItem.rating' color='yellow' readonly dense half-increments/>
-                            <v-spacer/>
+                            <v-spacer/> 
                             <v-btn class='primary' :to="{name:'book', params:{bookId:bookListItem.id}}" flat>Open the Ga...Book</v-btn>
                          </v-card-actions>
                     </v-flex>

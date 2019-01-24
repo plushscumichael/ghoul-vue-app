@@ -22,7 +22,7 @@
                         </v-card-title>
                         <v-card-title>
                             <v-rating v-model='bookDetails.rating' color='yellow' readonly dense half-increments/>
-                        </v-card-title>
+                        </v-card-title> 
                         <v-card-actions>
                             <v-spacer/>
                             <v-btn class='primary' flat>Lock-n-Load</v-btn>
@@ -57,8 +57,8 @@
                 <v-layout row>
                     <v-flex xs12>
                         <v-card-actions>
-                            <v-rating v-model='bookDetails.rating' color='yellow' readonly dense half-increments/>
-                            <v-spacer/>
+                           <v-rating v-model='bookDetails.rating' color='yellow' readonly dense half-increments/>
+                            <v-spacer/> 
                             <v-btn class='primary' flat>Lock-n-Load</v-btn>
                          </v-card-actions>
                     </v-flex>
