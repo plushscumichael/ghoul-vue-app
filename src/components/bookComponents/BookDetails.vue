@@ -25,7 +25,11 @@
                         </v-card-title> 
                         <v-card-actions>
                             <v-spacer/>
-                            <v-btn class='primary' flat>Lock-n-Load</v-btn>
+                            <v-btn class='primary' flat v-if="canLoadBook(bookDetails.id)" :loading="loading" @click='loadBook(bookDetails.id)'>Lock-n-Load</v-btn>
+                            <div v-if='getUserDataBook(bookDetails.id)'>
+                                <v-icon color='white'> work_outline </v-icon>
+                                Book already added {{getBookAddedDate(bookDetails.id)}}
+                            </div>
                         </v-card-actions>
                     </v-layout>
                 </v-flex>
@@ -70,6 +74,7 @@
 
 <script>
     import * as bookHelper from '../../helpers/book.js'
+    import {mapGetters} from 'vuex'
     export default {
         props:{
             "bookDetails":{
@@ -77,8 +82,30 @@
                 required: true
             }
         },
+        data(){
+            return {
+                loading: false
+            }
+        },
+        computed:{
+            ...mapGetters(['isUserAuthenticated', 'userData', 'getProcessing'])
+        },
          methods:{
-            getBookLevel: bookHelper.getBookLevel
+            getBookLevel: bookHelper.getBookLevel,
+            canLoadBook(bookId){
+                let book = this.getUserDataBook(bookId)
+                return this.isUserAuthenticated && !this.getProcessing && !book
+            },
+            getUserDataBook(bookId){
+                return this.userData.books[bookId]
+            },
+            loadBook(bookId){
+                this.$store.dispatch('ADD_USER_BOOK', bookId)
+            },
+            getBookAddedDate(bookId){
+                let book = this.getUserDataBook(bookId)
+                return book.addedDate.toLocaleDateString()
+            }
         }
     }
 </script>

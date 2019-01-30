@@ -55,16 +55,6 @@
                             </v-flex>
                         </v-layout> 
                     </v-container> 
-            <!--    <v-container v-for="(paragraph,i) in contentPart.content" :key='`par2${i}`'>
-                        <v-layout row wrap v-for="(sentence,y) in paragraph.sentences" :key='`par2${i}sen2${y}_orig`' :style='textStyle'>
-                            <v-flex xs6>
-                                {{sentence.origText}}
-                            </v-flex>
-                            <v-flex xs6>
-                                {{sentence.transText}}
-                            </v-flex>
-                        </v-layout> 
-                    </v-container> -->
                 </v-tab-item>
             </v-tabs>
         </div>

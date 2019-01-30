@@ -25,6 +25,7 @@ export default {
               title: data.title,
               description: data.description,
               imageSrc: data.imageSrc,
+              rating: data.rating,
               level: data.level.slice(),
               parts: []
             }
